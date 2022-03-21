@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import MoviesPlace from '../MoviesPlace/MoviesPlace';
-import cards from '../../constants/cards';
 import Menu from '../Menu/Menu';
-const Movies = () => {
+
+const Movies = ({ cardCount, handleSaveFilm, handleDeleteFilm, savedMovies, isAuth }) => {
   return (
     <>
-      <Header homePageBtnCondition={'disable'} />
+      <Header isAuth={isAuth} />
       <Menu activeLinkMovies={'menu__active-link'} />
-      <MoviesPlace cards={cards} />
+      <MoviesPlace
+        isSaved={false}
+        cardCount={cardCount}
+        handleSaveFilm={handleSaveFilm}
+        handleDeleteFilm={handleDeleteFilm}
+        savedMovies={savedMovies}
+      />
       <Footer />
     </>
   );
