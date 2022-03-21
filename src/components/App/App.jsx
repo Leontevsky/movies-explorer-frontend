@@ -73,7 +73,7 @@ const App = () => {
   const handleSaveFilm = ({ movie }) => {
     saveMovies(movie)
       .then(() => {
-        getMovies()
+        getMiniApiMovies()
           .then((res) => {
             const serverFilms = res;
             const userSavedFilms = filterUserSavedFilms(serverFilms, currentUser._id);
@@ -88,7 +88,7 @@ const App = () => {
   const handleDeleteFilm = ({ movieId }) => {
     deleteSavedMovies(movieId)
       .then(() => {
-        getMovies()
+        getMiniApiMovies()
           .then((res) => {
             const serverFilms = res;
             const userSavedFilms = filterUserSavedFilms(serverFilms, currentUser._id);
