@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 
 const Header = ({ isAuth }) => {
-  const history = useHistory()
+  const history = useHistory();
   const handleRedirectClick = () => {
-    history.push('/', { redirect: false })
-  }
+    history.push('/', { redirect: false });
+  };
   return (
     <>
       <header className="header">
@@ -40,8 +40,8 @@ const Header = ({ isAuth }) => {
                 </li>
                 <li className={`header__menu-point  header__menu-point-movies-pages`}>
                   <NavLink className="header__menu-profile-btn header__menu-btn" to="/profile">
-                    Аккаунт
                     <div className="header__menu-profile-btn-icon"></div>
+                    Аккаунт
                   </NavLink>
                 </li>
               </>
@@ -50,7 +50,7 @@ const Header = ({ isAuth }) => {
         </nav>
       </header>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

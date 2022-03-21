@@ -1,10 +1,10 @@
-const baseUrl = 'https://api.leontevsky.nomoredomains.work'
+const baseUrl = 'https://api.leontevsky.nomoredomains.work';
 
 function checkResponse(res) {
   if (res.ok) {
-    return res.json()
+    return res.json();
   }
-  return Promise.reject(`Ошибка: ${res.status}`)
+  return Promise.reject(`Ошибка: ${res.status}`);
 }
 
 const login = (email, password) =>
@@ -14,7 +14,7 @@ const login = (email, password) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ password, email }),
-  }).then(checkResponse)
+  }).then(checkResponse);
 
 const getUserInformation = () =>
   fetch(`${baseUrl}/users/me`, {
@@ -23,7 +23,7 @@ const getUserInformation = () =>
       'Content-Type': 'application/json',
       authorization: `Bearer ${localStorage.getItem('token')}`,
     },
-  }).then(checkResponse)
+  }).then(checkResponse);
 
 const editProfile = (name, email) =>
   fetch(`${baseUrl}/users/me`, {
@@ -33,7 +33,7 @@ const editProfile = (name, email) =>
       authorization: `Bearer ${localStorage.getItem('token')}`,
     },
     body: JSON.stringify({ name, email }),
-  }).then(checkResponse)
+  }).then(checkResponse);
 
 const deleteSavedMovies = (id) =>
   fetch(`${baseUrl}/movies/${id}`, {
@@ -42,7 +42,7 @@ const deleteSavedMovies = (id) =>
       'Content-Type': 'application/json',
       authorization: `Bearer ${localStorage.getItem('token')}`,
     },
-  }).then(checkResponse)
+  }).then(checkResponse);
 
 const saveMovies = (movie) =>
   fetch(`${baseUrl}/movies`, {
@@ -64,7 +64,7 @@ const saveMovies = (movie) =>
       nameRU: movie.nameRU,
       nameEN: movie.nameEN,
     }),
-  }).then(checkResponse)
+  }).then(checkResponse);
 
 const getMiniApiMovies = () =>
   fetch(`${baseUrl}/movies`, {
@@ -73,7 +73,7 @@ const getMiniApiMovies = () =>
       'Content-Type': 'application/json',
       authorization: `Bearer ${localStorage.getItem('token')}`,
     },
-  }).then(checkResponse)
+  }).then(checkResponse);
 
 const register = (name, email, password) =>
   fetch(`${baseUrl}/signup`, {
@@ -82,6 +82,6 @@ const register = (name, email, password) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ name, email, password }),
-  }).then(checkResponse)
+  }).then(checkResponse);
 
-export { register, login, getUserInformation, editProfile, saveMovies, getMiniApiMovies, deleteSavedMovies }
+export { register, login, getUserInformation, editProfile, saveMovies, getMiniApiMovies, deleteSavedMovies };

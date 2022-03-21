@@ -201,8 +201,8 @@ const MoviesPlace = ({ isSaved, cardCount, handleSaveFilm, handleDeleteFilm, sav
     <section className="movies">
       <form className="movies__search-from" onSubmit={onSubmitForm}>
         <div className="movies__search-bar">
+          <img className="movies__search-loop-img" alt="лупа" src={`${loopImg}`} />
           <div className="movies__search-input-bar">
-            <img className="movies__search-loop-img" alt="лупа" src={`${loopImg}`} />
             <input
               className="movies__search-input"
               placeholder="Фильм"
@@ -215,21 +215,23 @@ const MoviesPlace = ({ isSaved, cardCount, handleSaveFilm, handleDeleteFilm, sav
             ></input>
           </div>
           <div className="movies__serch-btn-box">
-            <button className="movies__search-btn" type="submit"></button>
-            <label htmlFor="short-films" className="movies__search-btn-label">
-              <input
-                id="short-films"
-                type="checkbox"
-                className="movies__search-btn-invisible"
-                name="short-films"
-                checked={isShort}
-                onChange={onShortFilmsCheckbox}
-              />
-              <span className="movies__search-btn-visible" />
-              <span className="movies__search-title">Короткометражки</span>
-            </label>
+            <button className="movies__search-btn" type="submit">
+              Найти
+            </button>
           </div>
         </div>
+        <label htmlFor="short-films" className="movies__search-btn-label">
+          <input
+            id="short-films"
+            type="checkbox"
+            className="movies__search-btn-invisible"
+            name="short-films"
+            checked={isShort}
+            onChange={onShortFilmsCheckbox}
+          />
+          <span className="movies__search-btn-visible" />
+          <span className="movies__search-title">Короткометражки</span>
+        </label>
       </form>
       {isSearch && moviesStorage.length > 0 && (
         <MoviesCardList
