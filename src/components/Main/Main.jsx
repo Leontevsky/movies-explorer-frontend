@@ -6,10 +6,10 @@ import Portfolio from '../Portfolio/Portfolio';
 import Technology from '../Technology/Technology';
 import Project from '../Project/Project';
 import Promo from '../Promo/Promo';
-const Main = () => {
+const Main = ({ isAuth }) => {
   return (
     <>
-      <Header applicationBtnCondition={'disable'} />
+      <Header isAuth={isAuth} />
       <Promo />
       <Project />
       <Technology />

@@ -72,14 +72,12 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #ffffff;
   margin: 0;
   padding-top: 5px;
   padding-bottom: 10px;
-  background: #F4F4F4;
+  background: #f4f4f4;
   border: none;
   border-radius: 8px;
-  
 }
 .signin__input:focus {
   outline: none;

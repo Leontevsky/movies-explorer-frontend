@@ -1,15 +1,12 @@
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = ({ isAuth }) => {
-  const history = useHistory();
-  const handleRedirectClick = () => {
-    history.push('/', { redirect: false });
-  };
+  console.log(isAuth);
   return (
     <>
       <header className="header">
-        <a className="header__logo" alt="лого" onClick={handleRedirectClick}></a>
+        <a className="header__logo" alt="лого" href="/"></a>
         <nav className="header__menu">
           <ul className="header__menu-bar">
             {!isAuth && (

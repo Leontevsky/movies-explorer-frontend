@@ -75,9 +75,11 @@ const App = () => {
       .then(() => {
         getMiniApiMovies()
           .then((res) => {
+            console.log(res);
             const serverFilms = res;
             const userSavedFilms = filterUserSavedFilms(serverFilms, currentUser._id);
             setSavedMovies(userSavedFilms);
+
             localStorage.setItem('films', JSON.stringify(userSavedFilms));
           })
           .catch((err) => console.log(err));

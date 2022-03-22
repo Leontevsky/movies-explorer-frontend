@@ -19,7 +19,7 @@
   background-color: white;
   border: none;
   color: #8b8b8b;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 500;
   width: 94px;
   height: 34px;
@@ -116,6 +116,7 @@
   row-gap: 38px;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   padding-top: 80px;
+  list-style-type: none;
 }
 
 .movies__button {

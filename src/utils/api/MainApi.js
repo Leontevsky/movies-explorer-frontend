@@ -64,7 +64,9 @@ const saveMovies = (movie) =>
       nameRU: movie.nameRU,
       nameEN: movie.nameEN,
     }),
-  }).then(checkResponse);
+  })
+    .then(checkResponse)
+    .then(console.log('Проверка'));
 
 const getMiniApiMovies = () =>
   fetch(`${baseUrl}/movies`, {
@@ -73,7 +75,9 @@ const getMiniApiMovies = () =>
       'Content-Type': 'application/json',
       authorization: `Bearer ${localStorage.getItem('token')}`,
     },
-  }).then(checkResponse);
+  })
+    .then(checkResponse)
+    .then(console.log('Test'));
 
 const register = (name, email, password) =>
   fetch(`${baseUrl}/signup`, {
