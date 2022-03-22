@@ -46,16 +46,30 @@
 }
 
 .card__movies-button-active {
-  background: #ee3465 url(../../images/like.svg);
+  background: #ee3465 url(../../images/icon-movie-added.svg);
   color: #ee3465;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-position: center;
 }
 .card__movies-button-delete {
   /* background-image: url(../../images/color10.svg); */
-  background-color: red;
+  /* background-color: red; */
   /* opacity: 0; */
-  transition: 1s ease all;
+  /* transition: 1s ease all;
+  width: 100px;
+  height: 29px; */
+  background: #ee3465 url(../../images/icon-movie-delete.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-position: center;
   width: 100px;
   height: 29px;
+  background-color: #f4f4f4;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin: 18px auto;
 }
 .card__timeline {
   font-weight: normal;
