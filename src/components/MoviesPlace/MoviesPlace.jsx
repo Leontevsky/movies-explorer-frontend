@@ -23,7 +23,10 @@ const MoviesPlace = ({ isSaved, cardCount, handleSaveFilm, handleDeleteFilm, sav
   const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [isBtnVisible, setIsBtnVisible] = useState(false);
 
-  const onShortFilmsCheckbox = () => setIsShort(!isShort);
+  const onShortFilmsCheckbox = () => {
+    setIsShort(!isShort);
+    localStorage.setItem('searchCheckbox', !isShort);
+  };
 
   const filterItems = (arr, query) =>
     arr.filter((movie) => movie.nameRU.toLowerCase().indexOf(query.toLowerCase()) !== -1);
@@ -46,7 +49,7 @@ const MoviesPlace = ({ isSaved, cardCount, handleSaveFilm, handleDeleteFilm, sav
             localStorage.setItem('moviesLongFilms', JSON.stringify(filteredFilms));
             localStorage.setItem('moviesShortFilms', JSON.stringify(shortFilms));
             localStorage.setItem('searchTextFilms', values.search);
-            localStorage.setItem('searchCheckbox', isShort);
+
             setFilterFilmArray(filteredFilms);
             setShortFilmsArray(shortFilms);
             if (isShort) {

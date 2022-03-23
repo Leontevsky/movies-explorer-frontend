@@ -79,16 +79,29 @@
 }
 .card__img {
   width: 100%;
+  height: 200px;
 }
 
 .card__marker:hover .card__movies-button-delete {
   opacity: 1;
 }
+
+@media (max-width: 875px) {
+  .card__img {
+    height: 190px;
+  }
+}
+
 @media (max-width: 700px) {
   .card__title {
     font-size: 12px;
     line-height: 15px;
   }
+
+  .card__img {
+    height: 168px;
+  }
+
   .card__movies-button-delete {
     opacity: 1;
   }

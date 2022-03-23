@@ -86,14 +86,14 @@
 }
 
 .movies__search-btn-invisible:checked + .movies__search-btn-visible {
-  background: url('../../images/tumbleroff.svg');
+  background: url('../../images/tumbler.svg');
   margin: 0 14px 0 0;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .movies__search-btn-invisible + .movies__search-btn-visible {
-  background: url('../../images/tumbler.svg');
+  background: url('../../images/tumbleroff.svg');
   margin: 0 14px 0 0;
   background-size: cover;
   background-repeat: no-repeat;

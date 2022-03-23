@@ -64,7 +64,9 @@ const Signin = ({ onRegisterSumbit }) => {
               </span>
             </li>
           </ul>
-          <button className="signin__btn">Зарегистрироваться</button>
+          <button className={!isValid ? 'signin__btn signin__btn-disabled' : 'signin__btn'} disabled={!isValid}>
+            Зарегистрироваться
+          </button>
           <div className="signin__text-box">
             <p className="signin__text">Уже зарегистрированы?</p>
             <a className="signin__link" href="/signin">

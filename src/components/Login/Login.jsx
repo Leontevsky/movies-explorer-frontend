@@ -1,16 +1,16 @@
-import React from 'react'
-import formValidator from '../../utils/react-hooks/Validator'
+import React from 'react';
+import formValidator from '../../utils/react-hooks/Validator';
 const Login = ({ handleLogin, loginNetworkError }) => {
   const { values, isValid, handleChange, errors } = formValidator({
     email: '',
     password: '',
-  })
+  });
   const onFormSumbit = (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
     if (isValid) {
-      handleLogin({ email: values.email, password: values.password })
+      handleLogin({ email: values.email, password: values.password });
     }
-  }
+  };
 
   return (
     <section className="login">
@@ -51,7 +51,11 @@ const Login = ({ handleLogin, loginNetworkError }) => {
               </span>
             </li>
           </ul>
-          <button type="submit" className="login__btn">
+          <button
+            type="submit"
+            className={!isValid ? 'login__btn login__btn-disabled' : 'login__btn'}
+            disabled={!isValid}
+          >
             Войти
           </button>
           <div className="login__text-box">
@@ -63,6 +67,6 @@ const Login = ({ handleLogin, loginNetworkError }) => {
         </form>
       </div>
     </section>
-  )
-}
-export default Login
+  );
+};
+export default Login;

@@ -142,6 +142,10 @@
   margin-top: 5px;
 }
 
+.signin__btn-disabled {
+  opacity: 0.5;
+}
+
 @media (max-width: 875px) {
   .signin {
     padding-top: 232px;
